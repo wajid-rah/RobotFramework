@@ -7,11 +7,9 @@ Test Teardown  Close Browser
 
 Resource    ../Resource/Base/CommonFunctionality.resource
 Test Template       Verify Add Emergency Contact Templ
-
-
+Library   DataDriver    file=../test_data/orange_data.xlsx      sheet_name=AddEmergencyContacts
 *** Test Cases ***
-TC1     Admin   admin123    John    Brother     88767
-TC2     Admin   admin123    Sandy   Sister      4044
+TC1
 
 *** Keywords ***
 Verify Add Emergency Contact Templ
