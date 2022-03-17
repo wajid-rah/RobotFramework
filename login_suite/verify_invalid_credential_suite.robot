@@ -12,6 +12,8 @@ Test Template       Verify Invalid Credential Templ
 *** Test Cases ***
 TC1     John    john123     Invalid credentials
 TC2     peter   peter123    Invalid credentials
+TC3     ${EMPTY}    abf123      Username cannot be empty
+TC4     abc     ${EMPTY}        Password cannot be empty
 
 *** Keywords ***
 Verify Invalid Credential Templ
