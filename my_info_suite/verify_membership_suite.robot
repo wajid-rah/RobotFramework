@@ -12,7 +12,7 @@ TC1
 
 *** Keywords ***
 Verify Add Membership Templ
-    [Arguments]     ${username}   ${password}   ${membership}   ${paid_by}      ${amount}   ${coin}
+    [Arguments]     ${username}   ${password}   ${membership}   ${paid_by}      ${amount}   ${coin}   ${commence_date}      ${renewal_date}
     Input Text          id=txtUsername      ${username}
     Input Password      id=txtPassword      ${password}
     Click Element       id=btnLogin
@@ -21,12 +21,18 @@ Verify Add Membership Templ
     Click Element    xpath=//input[@id="btnAddMembershipDetail"]
     Select From List By Label   xpath=//select[@name="membership[membership]"]      ${membership}
     Select From List By Label    xpath=//select[@name="membership[subscriptionPaidBy]"]     ${paid_by}
+
     Input Text      xpath=//input[@name="membership[subscriptionAmount]"]     ${amount}
     Select From List By Label    xpath=//select[@name="membership[currency]"]       ${coin}
+
+    Input Text    id=membership_subscriptionCommenceDate    ${commence_date}
+    Input Text    id=membership_subscriptionRenewalDate    ${renewal_date}
+
+
     Click Element    xpath=//input[@name="btnSaveMembership"]
 
-    Table Should Contain    xpath=//form[@id="frmEmpDelMemberships"]      ${membership}
-    Table Should Contain    xpath=//form[@id="frmEmpDelMemberships"]      ${paid_by}
-    Table Should Contain    xpath=//form[@id="frmEmpDelMemberships"]      ${amount}
+    Table Should Contain    xpath=//table[@class="table hover"]      ${membership}
+    Table Should Contain    xpath=//table[@class="table hover"]      ${paid_by}
+    Table Should Contain    xpath=//table[@class="table hover"]      ${amount}
 
 
