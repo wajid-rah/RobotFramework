@@ -13,3 +13,4 @@ Verify Valid Credential Test
     Input Password      id=txtPassword      admin123
     Click Element       id=btnLogin
     Page should Contain     My Info
+    Capture Page Screenshot

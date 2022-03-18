@@ -29,3 +29,4 @@ Verify Add Emergency Contact Templ
     Table Should Contain        id=emgcontact_list      ${contact_name}
     Table Should Contain        id=emgcontact_list      ${relationship}
     Table Should Contain        id=emgcontact_list      ${home_ph}
+

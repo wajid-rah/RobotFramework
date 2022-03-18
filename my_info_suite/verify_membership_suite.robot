@@ -35,4 +35,7 @@ Verify Add Membership Templ
     Table Should Contain    xpath=//table[@class="table hover"]      ${paid_by}
     Table Should Contain    xpath=//table[@class="table hover"]      ${amount}
 
+    Table Should Contain    xpath=//table[@class='table hover']    ${commence_date}
+    Table Should Contain    xpath=//table[@class='table hover']    ${renewal_date}
+
 
