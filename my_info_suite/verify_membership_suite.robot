@@ -1,7 +1,10 @@
 *** Settings ***
 Documentation   This suite files handles test case related to membership
 Library     DataDriver      file=../test_data/orange_data.xlsx      sheet_name=AddMemberships
+
 Resource    ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
+
 Test Setup  Launch Browser
 Test Teardown  Close Browser
 Test Template   Verify Add Membership Templ
@@ -13,8 +16,8 @@ TC1
 *** Keywords ***
 Verify Add Membership Templ
     [Arguments]     ${username}   ${password}   ${membership}   ${paid_by}      ${amount}   ${coin}   ${commence_date}      ${renewal_date}
-    Input Text          id=txtUsername      ${username}
-    Input Password      id=txtPassword      ${password}
+    Enter UserName     ${username}
+    Enter Password     ${password}
     Click Element       id=btnLogin
     Click Element       id=menu_pim_viewMyDetails
     Click Element    partial link=Memberships

@@ -6,6 +6,7 @@ Test Setup  Launch Browser
 Test Teardown  Close Browser
 
 Resource    ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
 Test Template       Verify Invalid Credential Templ
 
 
@@ -18,8 +19,8 @@ TC4     abc     ${EMPTY}        Password cannot be empty
 *** Keywords ***
 Verify Invalid Credential Templ
     [Arguments]     ${username}     ${password}     ${expected_error}
-    Input Text      id=txtUsername      ${username}
-    Input Password      id=txtPassword      ${password}
+    Enter UserName     ${username}
+    Enter Password     ${password}
     Click Element       id=btnLogin
     Element Text Should Be    //span[@id="spanMessage"]    ${expected_error}
 

@@ -6,6 +6,7 @@ Test Setup  Launch Browser
 Test Teardown  Close Browser
 
 Resource    ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
 Test Template       Verify Add Emergency Contact Templ
 Library   DataDriver    file=../test_data/orange_data.xlsx      sheet_name=AddEmergencyContacts
 *** Test Cases ***
@@ -14,8 +15,8 @@ TC1
 *** Keywords ***
 Verify Add Emergency Contact Templ
     [Arguments]     ${username}     ${password}     ${contact_name}     ${relationship}     ${home_ph}
-    Input Text          id=txtUsername      ${username}
-    Input Password      id=txtPassword      ${password}
+    Enter UserName     ${username}
+    Enter Password     ${password}
     Click Element       id=btnLogin
     Click Element       id=menu_pim_viewMyDetails
     Click Element       partial link=Emergency Contacts

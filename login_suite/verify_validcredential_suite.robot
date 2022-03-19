@@ -5,12 +5,13 @@ Documentation   This suite will handles all the test cases related to valid
 Test Teardown  Close Browser
 
 Resource    ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
 
 *** Test Cases ***
 Verify Valid Credential Test
     Launch Browser
-    Input Text      id=txtUsername      Admin
-    Input Password      id=txtPassword      admin123
+    Enter UserName      Admin
+    Enter Password    admin123
     Click Element       id=btnLogin
     Page should Contain     My Info
     Capture Page Screenshot
